@@ -22,7 +22,7 @@ DWORD unprotect(DWORD addr)
 	DWORD pos = (DWORD)nFunc;
 	BOOL valid = false;
 	do {
-		if (*(BYTE*)pos == 0x72 && *(BYTE*)(pos + 0x2) == 0xA1 && (*(BYTE*)(pos + 0x7))) {
+		if (*(BYTE*)pos == 0x72 && *(BYTE*)(pos + 0x2) == 0xA1 && (*(BYTE*)(pos + 0x7)) == 0x8B) {
 			memcpy((void*)pos, "\xEB", 1);
 
 			DWORD cNFunc = (DWORD)nFunc;
