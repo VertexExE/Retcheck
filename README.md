@@ -33,7 +33,7 @@ DWORD unprotect(DWORD addr)
 	{
 		/* Check for the return check with the sig:
 		72 ?? A1 ?? ?? ?? ?? 8B
-		if the sig matches replace the the jb with a jmp.
+		If the sig matches replace the the jb with a jmp.
 		*/
 		if (pos[0] == 0x72 && pos[2] == 0xA1 && pos[7] == 0x8B) {
 			*(BYTE*)pos = 0xEB;
